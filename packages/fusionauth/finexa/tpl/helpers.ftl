@@ -32,7 +32,7 @@
 </html>
 [/#macro]
 
-[#macro head title="Iron Pixel" author="FusionAuth" description="User Management Redefined. A Single Sign-On solution for your entire enterprise."]
+[#macro head title="finexa" author="FusionAuth" description="User Management Redefined. A Single Sign-On solution for your entire enterprise."]
 <head>
   <title>${title}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,10 +53,10 @@
        Questions about icon names and sizes? https://realfavicongenerator.net/faq#.XrBnPJNKg3g --]
 
   [#--  Standard Favicon Fare --]
-  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djox1exln/image/upload/w_16,h_16,c_fill/v1739291929/web-app-manifest-512x512_v756tz.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djox1exln/image/upload/w_32,h_32,c_fill/v1739291929/web-app-manifest-512x512_v756tz.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/djox1exln/image/upload/w_96,h_96,c_fill/v1739291929/web-app-manifest-512x512_v756tz.png">
-  <link rel="icon" type="image/png" sizes="128" href="https://res.cloudinary.com/djox1exln/image/upload/w_128,h_128,c_fill/v1739291929/web-app-manifest-512x512_v756tz.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djox1exln/image/upload/w_16,h_16,c_fill/v1756240344/finexa_skbtth.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djox1exln/image/upload/w_32,h_32,c_fill/v1756240344/finexa_skbtth.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/djox1exln/image/upload/w_96,h_96,c_fill/v1756240344/finexa_skbtth.png">
+  <link rel="icon" type="image/png" sizes="128" href="https://res.cloudinary.com/djox1exln/image/upload/w_128,h_128,c_fill/v1756240344/finexa_skbtth.png">
 
   [#-- End Favicon Madness --]
 
