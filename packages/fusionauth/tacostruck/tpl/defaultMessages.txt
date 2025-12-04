@@ -691,4 +691,5 @@ phone-verification-form=Complete the form to request a new verification message.
 phone-verification-form-title=Phone number verification
 [invalid]oneTimeCode=Invalid code
 [blank]phoneNumber=Required
-        
+[ExternalAuthenticationException]SAMLResponseMismatchedAssertions=The SAML AuthnResponse object contained multiple Assertions that were incompatible. Unable to complete this login request.
+[ExternalAuthenticationException]SAMLResponseMissingAssertion=The SAML AuthnResponse object did not contain any Assertions. Unable to complete this login request.

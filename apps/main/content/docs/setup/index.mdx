@@ -1,6 +1,6 @@
 ---
-title: Setup
-description: Setup
+title: Demo Installation and Setup
+description: Set up the FusionAuth Docker container and Next.js Demo sites
 icon: Cog
 ---
 
@@ -8,11 +8,79 @@ icon: Cog
   Prerequisites: 
   - Node 22.6.0 or higher to run scripts without compiling TypeScript.
   - Docker to run FusionAuth locally (you can skip this if you already have a FusionAuth instance up and running)
+  - [pnpm](https://pnpm.io/installation#using-npm) to install and run scripts instead of NPM
 </Callout>
 
 
-## Download this repo
+## Install the demos
+
+Clone the repository and install its requirements.
 
 ```bash
-git clone https://github.com/alex-fusionauth/fusionauththemes.git
+git clone https://github.com/FusionAuth/fusionauth-themes
+
+cd fusionauththemes
+
+pnpm install
+
 ```
+
+## Set up FusionAuth Docker container
+
+The FusionAuth setup is created via a mix of Docker, FusionAuth Kickstart, and a setup script.
+
+The FusionAuth Docker files are located in the `fusionauth` directory. This directory contains the Docker compose file and the Kickstart information. 
+
+### Environment variables 
+
+The setup requires certain environment variables, those are contained in the `.env.example` file. Rename that file to `.env`.
+
+### Run Docker
+
+Move into the `fusionauth` directory and run the Docker container.
+
+```bash
+cd fusionauth
+
+docker compose up -d
+```
+
+After running these commands, there should be a version of FusionAuth running in your Docker engine. It's now ready to be populated for your demo.
+
+### Run the setup script
+
+Once the Docker container is running, you can run the setup script from the root directory of the project.
+
+```bash
+cd ..
+
+pnpm fa:setup
+```
+
+The setup script will ask you questions. The default values will be what you want, but **_must be copied and pasted from the terminal inputs_**.
+
+* **App Name**: The directory name of the demo app in the `/apps/` directory.
+* **API Key**: Any key you want, but to follow other tutorials, use `this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works`
+* **API Endpoint**: Where your FusionAuth URL is `http://localhost:9011`
+* **Admin Email**: Your FusionAuth admin email: `admin@example.com`
+* **Admin Password**: Your FusionAuth admin password: `password`
+* **Redirect URI**: Proper redirect URL for your app. Each app runs on a different port, so make sure to change it to the correct port `http://localhost:3001/api/auth/callback/fusionauth`
+  * `main`: 3000
+  * `iron-pixel`: 3001
+  * `changebank`: 3002
+  * `finexa`: 3003
+  * `tacostruck`: 3004
+
+Once the setup script finishes, it will give you a list of environment variables for your project. Copy those variables from your terminal into the appropriate app's `.env` file.
+
+If the script asks you if you want to delete data, answer "No"
+
+In your FusionAuth instance, log in with the admin credentials, navigate to your Tenants -> Default Tenant, and edit that tenant. In the Issuer field, add `http://localhost:9011`.
+
+## Next steps
+
+At this point, the FusionAuth app and the Next.js app should both be running and working together. If you don't need a branded set of FusionAuth themes for your demo, you can stop here.
+
+Each demo contains the files you need to do a fully-branded theme for the hosted FusionAuth pages.
+
+[Setting up your themes &raquo;](/docs/setup/theme)
