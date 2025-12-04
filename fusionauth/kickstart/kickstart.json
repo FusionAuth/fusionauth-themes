@@ -2,7 +2,8 @@
   "variables": {
     "apiKey": "this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works",
     "adminEmail": "admin@example.com",
-    "adminPassword": "password"
+    "adminPassword": "password",
+    "defaultTenantId": "0385e66c-90b3-9fa4-5e2c-fdab50684195"
   },
   "apiKeys": [
     {
