@@ -26,9 +26,9 @@ pnpm install
 
 ## Set up FusionAuth Docker container
 
-The FusionAuth setup is created via a mix of Docker, FusionAuth Kickstart, and a setup script.
+This project uses a mix of Docker, FusionAuth Kickstart, and a setup script.
 
-The FusionAuth Docker files are located in the `fusionauth` directory. This directory contains the Docker compose file and the Kickstart information. 
+The `fusionauth` directory contains the Docker compose file and Kickstart configuration.
 
 ### Environment variables 
 
@@ -36,27 +36,23 @@ The setup requires certain environment variables, those are contained in the `.e
 
 ### Run Docker
 
-Move into the `fusionauth` directory and run the Docker container.
+From the `fusionauth` directory, run the Docker container:
 
 ```bash
-cd fusionauth
-
 docker compose up -d
 ```
 
-After running these commands, there should be a version of FusionAuth running in your Docker engine. It's now ready to be populated for your demo.
+You now have an instance of FusionAuth, ready to be populated for your demo.
 
 ### Run the setup script
 
-Once the Docker container is running, you can run the setup script from the root directory of the project.
+With a FusionAuth instance running in Docker, run the setup script **from the root directory of the project**:
 
 ```bash
-cd ..
-
 pnpm fa:setup
 ```
 
-The setup script will ask you questions. The default values will be what you want, but **_must be copied and pasted from the terminal inputs_**.
+The setup script asks a series of questions. To use the default values, **_copy and paste them from the terminal inputs_**.
 
 * **App Name**: The directory name of the demo app in the `/apps/` directory.
 * **API Key**: Any key you want, but to follow other tutorials, use `this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works`
@@ -72,9 +68,9 @@ The setup script will ask you questions. The default values will be what you wan
 
 Once the setup script finishes, it will give you a list of environment variables for your project. Copy those variables from your terminal into the appropriate app's `.env` file.
 
-If the script asks you if you want to delete data, answer "No"
+If the script asks you if you want to delete data, answer "No".
 
-In your FusionAuth instance, log in with the admin credentials, navigate to your Tenants -> Default Tenant, and edit that tenant. In the Issuer field, add `http://localhost:9011`.
+In your FusionAuth instance, log in with the admin credentials, navigate to **Tenants -> Default Tenant**, and edit that tenant. In the Issuer field, add `http://localhost:9011`.
 
 ## Next steps
 
