@@ -2,6 +2,7 @@ import { auth } from '@/auth';
 import { NextResponse } from 'next/server';
 
 export default auth((req) => {
+  console.log(process.env.AUTH_FUSIONAUTH_ISSUER)
   if (process.env.SHOW_AUTH) {
     console.log('AUTH', req.auth);
   }
